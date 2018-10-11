@@ -20,14 +20,19 @@
     
     <div class = "container">
         <div class = "row container-form">
-            <div class = "col s4"></div>
-            <div class = "col s4">
-                <form>
-                    <input class = "form-control" name = "apelido_usuario" placeholder = "Informe seu apelido para fazer Login">
-                    <input type = "password" class = "form-control" name = "senha_usuario" placeholder = "Informe sua senha para fazer Login">
+            <div class = "col s3"></div>
+            <div class = "col s6">
+                <h1 class = "primary-color title-font text-center">Login RPG Manager</h1>
+                <form method = "POST" action = "/rpg-manager/login/logar/">
+                    <input required class = "form-control" name = "apelido_usuario" placeholder = "Apelido">
+                    <input required type = "password" class = "form-control" name = "senha_usuario" placeholder = "Senha">
+
+                    <div class = "div-center espaco-vertical">
+                        <button class = "btn button-green">Logar</button>
+                    </div>
                 </form>
             </div>
-            <div class = "col s4"></div>
+            <div class = "col s3"></div>
 
         </div>
     </div>
