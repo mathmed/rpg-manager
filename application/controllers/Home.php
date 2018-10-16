@@ -12,6 +12,7 @@ class Home extends CI_Controller {
 		/************************/
 
 		/* carregando a view da home */
+		$this->load->view("base");
 		$this->load->view("home");
 
 	}

@@ -6,7 +6,7 @@
     <title>Login RPG Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="<?= base_url("css/styles.css") ?>" rel="stylesheet">
+    <link href="<?= base_url("assets/css/style.css") ?>" rel="stylesheet">
 
     <!-- Importando Materialize -->
     <!-- Compiled and minified CSS -->

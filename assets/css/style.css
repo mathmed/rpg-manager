@@ -1,0 +1,170 @@
+
+
+/* Estilos genéricos */
+.primary-color {
+    color: #52bf90;
+}
+
+.title-font {
+    font-size: 2em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.button-green {
+    background:	#317256 !important;
+    border: 2px solid #317256 !important;
+    border-radius: 5px !important;
+    transition: .5s all !important;
+    font-weight: bold !important;
+}
+
+.button-green:hover {
+    background:	white !important;
+    color: #317256 !important;
+}
+
+.div-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espaco-vertical {
+    margin: 1em 0;
+}
+/* Fim dos estilos genéricos */
+
+
+/* Estilos da página de login */
+.container-form {
+    margin-top: 50px;
+}
+
+/* Fim dos estilos da página de login */
+
+
+/* Estilos da nav lateral */
+
+.icon-espaco {
+	margin-right: 8px;
+}
+
+.logo-text {
+	font-weight: bold;
+	font-size: 2em;
+	color: white;
+	text-transform: uppercase;
+}
+
+#side-bar {
+	background:white;
+	padding:0;
+	transition: all 0.5s;
+	min-height: 1300px;
+    max-height:100%;
+    border-right: 2px solid #317256;
+}
+
+#collapse-treinamentos {
+
+}
+#collapse-treinamentos ul:hover{
+	background: none;
+}
+#collapse-treinamentos ul li{
+	color: white;
+	font-size: .9em;
+}
+#collapse-treinamentos ul li:hover{
+	font-size: 1em;
+}
+
+#conteudo {
+	transition: all 0.5s;
+}
+
+
+.rotate{
+	transform:rotate(180deg);
+}
+
+
+.hidden{
+	display: none;
+}
+#icone {
+    color: 	#317256;
+	cursor: pointer;
+}
+
+.text-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.fa-arrow-right{
+	font-size: 2em;
+	color: white;
+	transition: all 0.5s;
+}
+.navigation h3 {
+	background:	#317256;
+	padding:0.7em 0;
+	color:#fff;
+	font-size:1.35em;
+	font-weight:600;
+	padding-left:2.5em;
+	margin-bottom:1em;
+}
+.navigation ul {
+	padding-left:4em;
+	padding-bottom:0.25em;
+	padding-top:0em;
+	cursor: pointer;
+}
+.navigation ul:hover {
+	background:	#317256;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.navigation ul li {
+	display:inline-block;
+	margin:5px 0;
+}
+.navigation ul li a {
+	color:	#317256;
+	font-size:1.3em;
+	font-weight:300;
+	text-decoration:none;
+	letter-spacing:1px;
+}
+
+.navigation {
+	padding-bottom: 2em;
+}
+
+.logo {
+  padding: 1.3em 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* Fim dos estilos da nav lateral */
+
+
+/* Estilos da página base */
+#logo {
+    width: 150px;
+    height: 70px;
+}
+
+/* Estilos da página home */
+
+/* Fim dos estilos da página home */
