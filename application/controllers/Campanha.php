@@ -14,13 +14,15 @@ class Campanha extends CI_Controller {
 	/* Controlador padrão de loguin do sistema */
 	public function index(){
 		
-		/* Lógica de programação */
+		/* verifica se o usuário está logado */
+		//if(!$this->session->has_userdata("adm")) redirect("/");
 
-		/************************/
+		/* carregando as campanhas cadastradas */
+		$dados["campanhas"] = $this->campanha->getAllCampanhas();
 
 		/* carregando a view da home */
 		$this->load->view("base");
-		$this->load->view("campanhas");
+		$this->load->view("campanhas", $dados);
 
 	}
 

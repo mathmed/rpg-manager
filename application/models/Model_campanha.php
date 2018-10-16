@@ -64,6 +64,16 @@ Class Model_campanha extends CI_Model{
 
     }
 
+    /* função para recuperar todas as campanhas do bd */
+    public function getAllCampanhas(){
+
+        /* fazendo requisição */
+        $campanhas = $this->db->get("campanha");
+
+        /* retornando resultado */
+        return $campanhas->result_array();
+    }   
+
 }
 
 
