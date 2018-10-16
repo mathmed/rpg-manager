@@ -46,10 +46,6 @@
 		<div class = "row">
 			<!-- Left nav -->
 			<div class = "col-md-3 side-bar" id = "side-bar">
-				<div class="logo text-center">
-					<img class = '' id = "logo" src = "<?= base_url("assets/images/logo.png") ?>">
-					<h1 id = "icone" class = 'fa fa-arrow-right rotate'></h1>
-				</div>
 
 				<div id = "conteudo-nav">
 					<div class='navigation'>

@@ -2,6 +2,14 @@
 
 /* Estilos genéricos */
 
+a {
+    cursor: pointer;
+}
+
+.espaco-top{
+    margin-top: 2em;
+}
+
 .start {
     margin-top:3em;
 }
@@ -17,7 +25,13 @@
     text-align: center;
 }
 
+.normal-font {
+    font-size: 1.2em;
+    color:#202020;    
+}
+
 .button-green {
+    color: white;
     background:	#317256 !important;
     border: 2px solid #317256 !important;
     border-radius: 5px !important;
@@ -37,7 +51,7 @@
 }
 
 .espaco-vertical {
-    margin: 1em 0;
+    margin: 2em 0;
 }
 /* Fim dos estilos genéricos */
 
@@ -169,3 +183,13 @@
 
 
 /* Fim dos estilos da página home */
+
+
+/* Estilos da página de campanha */
+
+.click:hover {
+    color: #52bf90;
+    font-weight: bold;
+}
+
+/* Fim dos estilos da página de campanha */
