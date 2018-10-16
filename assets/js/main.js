@@ -9,17 +9,17 @@ $(document).ready(function(){
     $("#icone").click(function(){
         if($("#conteudo-nav").hasClass("hidden")){
             $("#side-bar").removeClass("col-md-1");
-            $("#side-bar").addClass("col-md-4");
+            $("#side-bar").addClass("col-md-3");
             $("#conteudo-nav").removeClass("hidden");
             $("#conteudo").removeClass("col-md-11");
-            $("#conteudo").addClass("col-md-8");
+            $("#conteudo").addClass("col-md-9");
             $("#icone").addClass("rotate");
             $("#logo").removeClass("hidden");
         }else{
-            $("#side-bar").removeClass("col-md-4");
+            $("#side-bar").removeClass("col-md-3");
             $("#side-bar").addClass("col-md-1");
             $("#conteudo-nav").addClass("hidden");
-            $("#conteudo").removeClass("col-md-8");
+            $("#conteudo").removeClass("col-md-9");
             $("#conteudo").addClass("col-md-11");
             $("#icone").removeClass("rotate");
             $("#logo").addClass("hidden");

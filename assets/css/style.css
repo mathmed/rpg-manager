@@ -1,6 +1,10 @@
 
 
 /* Estilos genéricos */
+
+.start {
+    margin-top:3em;
+}
 .primary-color {
     color: #52bf90;
 }
@@ -125,24 +129,20 @@
 	padding-top:0em;
 	cursor: pointer;
 }
-.navigation ul:hover {
-	background:	#317256;
-	transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-moz-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
-}
+
 .navigation ul li {
 	display:inline-block;
 	margin:5px 0;
 }
 .navigation ul li a {
-	color:	#317256;
+	color:#317256;
 	font-size:1.3em;
 	font-weight:300;
 	text-decoration:none;
 	letter-spacing:1px;
+}
+.navigation ul li a:hover{
+    font-weight: bold;
 }
 
 .navigation {
@@ -166,5 +166,6 @@
 }
 
 /* Estilos da página home */
+
 
 /* Fim dos estilos da página home */

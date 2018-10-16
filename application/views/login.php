@@ -26,7 +26,6 @@
                 <form method = "POST" action = "/rpg-manager/login/logar/">
                     <input required class = "form-control" name = "apelido_usuario" placeholder = "Apelido">
                     <input required type = "password" class = "form-control" name = "senha_usuario" placeholder = "Senha">
-
                     <div class = "div-center espaco-vertical">
                         <button class = "btn button-green">Logar</button>
                     </div>
