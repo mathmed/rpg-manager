@@ -58,7 +58,7 @@
 
                             echo "
                             <td class = 'text-center'>
-                                <a href = '/beer-ecommerce/dash/promocao/editar/".$campanha['id_campanha']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                                <a href = '/rpg-manager/detalhes/".$campanha['id_campanha']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
                             </td>";
         
                             echo "</tr>";
