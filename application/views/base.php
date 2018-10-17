@@ -45,7 +45,7 @@
 <div class = "content">
 		<div class = "row">
 			<!-- Left nav -->
-			<div class = "col-md-3 side-bar" id = "side-bar">
+			<div class = "col-md-2 side-bar" id = "side-bar">
 
 				<div id = "conteudo-nav">
 					<div class='navigation'>
@@ -54,7 +54,7 @@
 							<li><a href='/rpg-manager/home'><i class='fa fa-home icon-espaco'></i></a></li>
 							<li><a href='/rpg-manager/home'>Início</a></li>
 						</ul>
-						<ul class = '<?php if(isset($cor_ul_relatorios)) echo $cor_ul_relatorios;?>'>
+						<ul class = '<?php if(isset($cor_ul_campanhas)) echo $cor_ul_campanhas;?>'>
 							<li><a href='/rpg-manager/campanha'><i class='fa fa-magic icon-espaco'></i></a></li>
 							<li><a href='/rpg-manager/campanha'>Campanhas</a></li>
 						</ul>

@@ -7,7 +7,11 @@ a {
 }
 
 .espaco-top{
-    margin-top: 2em;
+    margin-top: 1em;
+}
+
+.espaco-bottom {
+	margin-bottom: 1em!important;
 }
 
 .start {
@@ -52,6 +56,11 @@ a {
 
 .espaco-vertical {
     margin: 2em 0;
+}
+
+.ul-marcada {
+	font-weight: bold;
+	background: #edf8f3
 }
 /* Fim dos estilos genéricos */
 
@@ -190,6 +199,12 @@ a {
 .click:hover {
     color: #52bf90;
     font-weight: bold;
+}
+
+.tr-estilo {
+	background: #317256;
+	color: white;
+	font-weight: bold;
 }
 
 /* Fim dos estilos da página de campanha */

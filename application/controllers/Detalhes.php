@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Detalhes extends CI_Controller {
 
-	/* Controlador padrão da página home do sistema */
+	/* Controlador da página detalhes sistema */
 
 	public function index(){
 		
@@ -16,5 +16,4 @@ class Home extends CI_Controller {
 		$this->load->view("home");
 
 	}
-
 }

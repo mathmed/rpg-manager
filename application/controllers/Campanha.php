@@ -20,8 +20,12 @@ class Campanha extends CI_Controller {
 		/* carregando as campanhas cadastradas */
 		$dados["campanhas"] = $this->campanha->getAllCampanhas();
 
+		/* dados que serão passados como parâmetro */
+        /* enviando como parâmetro a cor da ul */
+		$data['cor_ul_campanhas'] = 'ul-marcada';
+
 		/* carregando a view da home */
-		$this->load->view("base");
+		$this->load->view("base", $data);
 		$this->load->view("campanhas", $dados);
 
 	}

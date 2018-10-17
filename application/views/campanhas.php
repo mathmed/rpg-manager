@@ -2,7 +2,7 @@
 
 <div class = "start">
     <div>
-        <h1 class = "text-center primary-color title-font">Campanhas</h1>
+        <h1 class = "text-center primary-color title-font espaco-bottom">Campanhas</h1>
     </div>
 
     <?php if(!$campanhas){ ?>
@@ -42,7 +42,8 @@
                     <tr class = "tr-estilo">
                         <th class="text-center">ID</th>
                         <th class="text-center">Nome campanha</th>
-                        <th class="text-center">Descrição</th>
+                        <th class="text-center">Sinopse</th>
+                        <th class="text-center">Ir para campanha</th>
                     </tr>
                 </thead>
                 <tbody>
