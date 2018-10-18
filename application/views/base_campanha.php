@@ -55,8 +55,8 @@
 							<li><a href='/rpg-manager/home'>Início</a></li>
                         </ul>
 						<ul class = '<?php if(isset($cor_ul_sessao)) echo $cor_ul_sessao;?>'>
-							<li><a href='/rpg-manager/sessoes/<?=$id?>'><i class='fa fa-pen-square icon-espaco'></i></a></li>
-							<li><a href='/rpg-manager/sessoes/<?=$id?>'>Sessões</a></li>
+							<li><a href='/rpg-manager/sessoes'><i class='fa fa-pen-square icon-espaco'></i></a></li>
+							<li><a href='/rpg-manager/sessoes'>Sessões</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_campanhas)) echo $cor_ul_campanhas;?>'>
 							<li><a href='/rpg-manager/anotacoes/<?=$id?>'><i class='fa fa-edit icon-espaco'></i></a></li>

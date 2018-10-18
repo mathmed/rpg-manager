@@ -4,6 +4,26 @@
     <div>
         <h1 class = "text-center primary-color title-font espaco-bottom">Campanhas</h1>
     </div>
+    <form method = "POST" action = "/rpg-manager/campanha/add">
+        <input type = "hidden" name = "tipo" value = "add">
+        <div class = "collapse" id = "collapse-add-campanha">
+            <div class = "row">
+                <div class = "col-md-6">
+                    <label>Informe um nome para sua campanha</label>
+                    <input required name = "nome_campanha" class = "form-control" placeholder = "Nome da campanha">
+                </div>
+            </div>
+            <div class = "row espaco-top">
+                <div class = "col-md-10">
+                    <label>Escreva sobre sua campanha</label>
+                    <textarea required name  = "descricao_campanha" class = "form-control" rows = '10'></textarea>
+                </div>
+            </div>
+            <div class = "espaco-top">
+                <button class = "btn button-green">Criar campanha</button>
+            </div>
+        </div>
+    </form>
 
     <?php if(!$campanhas){ ?>
 
@@ -12,30 +32,10 @@
             <p class =  "normal-font text-center">Você não possui nenhuma campanha cadastrada ainda.</p>
             <p class = "normal-font text-center"><a data-toggle = "collapse" data-target = "#collapse-add-campanha" class = "click primary-color">Clique aqui</a> para criar sua primeira campanha!</p>
         </div>
-
-        <form method = "POST" action = "/rpg-manager/campanha/add">
-            <input type = "hidden" name = "tipo" value = "add">
-            <div class = "collapse" id = "collapse-add-campanha">
-                <div class = "row">
-                    <div class = "col-md-6">
-                        <label>Informe um nome para sua campanha</label>
-                        <input required name = "nome_campanha" class = "form-control" placeholder = "Nome da campanha">
-                    </div>
-                </div>
-                <div class = "row espaco-top">
-                    <div class = "col-md-10">
-                        <label>Escreva sobre sua campanha</label>
-                        <textarea required name  = "descricao_campanha" class = "form-control" rows = '10'></textarea>
-                    </div>
-                </div>
-                <div class = "espaco-top">
-                    <button class = "btn button-green">Criar campanha</button>
-                </div>
-            </div>
-        </form>
     </div>
     <?php }else{ ?>
-
+        
+        <p class = "normal-font text-center"><a data-toggle = "collapse" data-target = "#collapse-add-campanha" class = "click primary-color">Clique aqui</a> para criar outra campanha</p>
         <div>
             <table class="table table-bordered">
                 <thead>
@@ -54,7 +54,7 @@
                             echo "<tr>";
                             echo "<td class = 'text-center'>#".$campanha['id_campanha']."</td>";
                             echo "<td class = 'text-center td-nome'>".$campanha['nome_campanha']."</td>";
-                            echo "<td class = 'text-center td-nome'>".$campanha['descricao_campanha']."%</td>";
+                            echo "<td class = 'text-center td-nome'>".$campanha['descricao_campanha']."</td>";
 
                             echo "
                             <td class = 'text-center'>

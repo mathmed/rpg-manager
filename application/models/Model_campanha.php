@@ -18,7 +18,7 @@ Class Model_campanha extends CI_Model{
                     "nome_campanha" => $nome,
                     "descricao_campanha" => $descricao,
                     "data_criacao" => date("Y-m-d"),
-                    "usuario_id_usuario" => 1
+                    "usuario_id_usuario" => $this->session->userdata("user")[0]["id_usuario"]
                 ];
 
                 /* tentando cadastrar a campanha */

@@ -12,17 +12,17 @@ class Sessoes extends CI_Controller {
 	}
 
 	/* função padrão da página sessão */
-	public function index($id = NULL){
+	public function index(){
 
 		/* verificando se o usuário está logado */
 		if(!$this->session->has_userdata("user"))
 			redirect("/login");
 
 		/* verificando se foi passado o parâmetro */
-		if($id){
+		if($this->session->has_userdata("id_campanha")){
 
 			/* carregando as sessões já cadastradas no banco de dados */
-			$data['sessoes'] = $this->sessao->getAllSessoes();
+			$data['sessoes'] = $this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"));
 
 			/* dados que serão passados como parâmetro */
 			/* enviando como parâmetro a cor da ul */
@@ -54,7 +54,7 @@ class Sessoes extends CI_Controller {
 			/* chamando a função para atualizar uma sessão */
 			$this->sessao->attSessao();
 
-		//redirect("/sessao");
+		redirect("/sessoes");
 	}
     
 }
