@@ -43,9 +43,23 @@ a {
     font-weight: bold !important;
 }
 
-.button-green:hover {
+.button-green:hover, .button-green:active, .button-green:focus {
     background:	white !important;
     color: #317256 !important;
+}
+
+.button-red {
+    color: white;
+    background:	#c02d24 !important;
+    border: 2px solid #c02d24 !important;
+    border-radius: 5px !important;
+    transition: .5s all !important;
+    font-weight: bold !important;
+}
+
+.button-red:hover, .button-red:active, .button-red:focus  {
+    background:	white !important;
+    color: #c02d24 !important;
 }
 
 .div-center {

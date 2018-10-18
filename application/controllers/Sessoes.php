@@ -34,6 +34,24 @@ class Sessoes extends CI_Controller {
 		}
 	}
 
+	/* função para mostrar a página de uma sessão */
+	public function show($id = NULL){
+		
+		/* verificando se o usuário está logado */
+		if(!$this->session->has_userdata("user")) redirect("/login");
+		
+		/* verificando se foi passado um id */
+		if(!$id) redirect("/sessoes");
+
+		/* recuperando a sessão */
+		$data['sessao'] = $this->sessao->getSessaoByID($id)[0];
+		$data['cor_ul_sessao'] = 'ul-marcada';
+
+		/* carregando a view de sessões e base */
+		$this->load->view("base_campanha", $data);
+		$this->load->view('sessao', $data);
+	}
+
 	/* função para adicionar uma nova sessão no sistema ou att uma existente */
 	public function add(){
 		
@@ -42,7 +60,7 @@ class Sessoes extends CI_Controller {
 			redirect("/login");
 
 		/* verifica se a requisição é para adicionar ou atualizar uma sessão */
-		if($this->input->post("tipo") == "add")
+		if($this->input->post("tipo") == "add"){
 			/* chamando a função para adicionar uma nova sessão */
 			$this->sessao->addSessao(
 				$this->input->post("data_sessao"),
@@ -50,11 +68,38 @@ class Sessoes extends CI_Controller {
 				$this->input->post("nome_sessao")
 			);
 
-		else
-			/* chamando a função para atualizar uma sessão */
-			$this->sessao->attSessao();
+			redirect("/sessoes");
+		}
 
+		else{
+			/* chamando a função para atualizar uma sessão */
+			$this->sessao->attSessao(
+				$this->input->post("id_sessao"),
+				$this->input->post("data_sessao"),
+				$this->input->post("descricao_sessao"),
+				$this->input->post("nome_sessao")
+			);
+
+			redirect("/sessoes/".$this->input->post('id_sessao'));
+
+		}
+
+	}
+
+	/* função para deletar uma sessão do sistema */
+	public function del(){
+
+		/* verificando se o usuário está logado */
+		if(!$this->session->has_userdata("user")) redirect("/login");
+
+		/* chamando a função para deletar */
+		$this->sessao->delSessao(
+			$this->input->post("id_sessao")
+		);
+
+		/* redirecinando */
 		redirect("/sessoes");
+
 	}
     
 }

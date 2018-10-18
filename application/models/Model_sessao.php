@@ -29,13 +29,45 @@ Class Model_sessao extends CI_Model{
     }
 
     /* função para deletar uma sessão */
-    public function delSessao(){
-        echo "teste";
+    public function delSessao($id = NULL){
+        
+        /* verifica se foi passado um id */
+        if($id){
+
+            /* iniciando a query */
+            $this->db->where("id_sessao = $id");
+            if($this->db->delete("sessao"))
+                $this->session->set_flashdata('crud_sessao', "<div class = 'alert alert-success'>Sessão deletada com sucesso!</div>");
+            else
+                $this->session->set_flashdata('crud_sessao', "<div class = 'alert alert-danger'>Erro ao deletar a sessão, verifique sua conexão com a internet</div>");
+        }
+        else{
+            $this->session->set_flashdata('crud_sessao', "<div class = 'alert alert-danger'>Erro ao deletar a sessão, certifique que a sessão existe</div>");
+        }
     }
 
     /* função para atualizar uma sessão */
-    public function attSessao(){
-        echo "teste";
+    public function attSessao($id = NULL, $data = NULL, $descricao = NULL, $nome = NULL){
+        
+        /* verificando se os parâmetros foram enviados */
+        if($id && $data && $descricao && $nome){
+
+            /* gerando array de update */
+            $update = [
+                "data_sessao" => $data,
+                "descricao_sessao" => $descricao,
+                "nome_sessao" => $nome
+            ];
+
+            /* iniciando requisição para atualizar */
+            if($this->db->update("sessao", $update, "id_sessao = $id"))
+                $this->session->set_flashdata('crud_sessao', "<div class = 'alert alert-success'>Sessão atualizada com sucesso!</div>");
+            else
+                $this->session->set_flashdata('crud_sessao', "<div class = 'alert alert-danger'>Erro ao atualizar sessão, verifique sua conexão com a internet!</div>");
+            
+        }else{
+            $this->session->set_flashdata('crud_sessao', "<div class = 'alert alert-danger'>Erro ao atualizar sessão, certifique que todos os dados foram preenchidos corretamente!</div>");
+        }
     }
 
     /* função para selecionar uma sessão específica do bd */
@@ -61,7 +93,24 @@ Class Model_sessao extends CI_Model{
             return $sessoes;
 
         }
-    }   
+    }
+
+    /* função para recuperar uma sessão pelo ID */
+    public function getSessaoByID($id = NULL){
+
+        /* verificando se foi passado um parâmetro */
+        if($id){
+
+            /* definindo um limite */
+            $this->db->limit(1);
+
+            /* requisitando */
+            $this->db->where("id_sessao", $id);
+            return $this->db->get("sessao")->result_array();
+
+        }
+
+    }
 
 }
 

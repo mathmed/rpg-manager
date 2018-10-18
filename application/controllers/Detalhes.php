@@ -20,7 +20,7 @@ class Detalhes extends CI_Controller {
 			/* dados que serão passados como parâmetro */
 			/* enviando como parâmetro a cor da ul */
 			$data['cor_ul_inicio'] = 'ul-marcada';
-			$data['id'] = $id;
+			$data['id_campanha'] = $id;
 			
 			/* carregando a view da home */
 			$this->load->view("base_campanha", $data);

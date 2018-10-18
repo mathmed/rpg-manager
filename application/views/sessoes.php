@@ -1,6 +1,7 @@
-<?= $this->session->flashdata("crud_sessao");?>
 
 <div class = "start">
+<?= $this->session->flashdata("crud_sessao");?>
+
     <div>
         <h1 class = "text-center primary-color title-font espaco-bottom">Sessões</h1>
     </div>
@@ -69,7 +70,7 @@
 
                                 echo "
                                 <td class = 'text-center'>
-                                    <a href = '/rpg-manager/detalhes/".$sessao['id_sessao']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
+                                    <a href = '/rpg-manager/sessoes/".$sessao['id_sessao']."'><button class = 'btn btn-sm btn-info'><i class = 'fa fa-edit'></i></button></a>
                                 </td>";
             
                                 echo "</tr>";
