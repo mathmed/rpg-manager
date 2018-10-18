@@ -60,7 +60,7 @@
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_campanhas)) echo $cor_ul_campanhas;?>'>
 							<li><a href='/rpg-manager/anotacoes/<?=$id?>'><i class='fa fa-edit icon-espaco'></i></a></li>
-							<li><a href='/rpg-manager/anotacoes/<?=$id?>'>Anotações</a></li>
+							<li><a href='/rpg-manager/anotacoes/<?=$id?>'>Campanha</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_campanhas)) echo $cor_ul_campanhas;?>'>
 							<li><a href='/rpg-manager/fichas/<?=$id?>'><i class='fa fa-clipboard icon-espaco'></i></a></li>
@@ -89,11 +89,11 @@
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_campanhas)) echo $cor_ul_campanhas;?>'>
 							<li><a href='/rpg-manager/gencontros'><i class='fa fa-user-friends icon-espaco'></i></a></li>
-							<li><a href='/rpg-manager/gencontros'>G. encontros</a></li>
+							<li><a href='/rpg-manager/gencontros'>G. Encontros</a></li>
 						</ul>
 						<ul class = '<?php if(isset($cor_ul_campanhas)) echo $cor_ul_campanhas;?>'>
 							<li><a href='/rpg-manager/garmadilhas'><i class='fa fa-sad-cry icon-espaco'></i></a></li>
-							<li><a href='/rpg-manager/garmadilhas'>G. armadilhas</a></li>
+							<li><a href='/rpg-manager/garmadilhas'>G. Armadilhas</a></li>
 						</ul>
 					</div>
 				</div>
