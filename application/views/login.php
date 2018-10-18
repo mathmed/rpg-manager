@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="<?= base_url("assets/css/style.css") ?>" rel="stylesheet">
+	<link href="<?= base_url("assets/css/bootstrap.css") ?>" rel="stylesheet" type="text/css" media="all">
 
     <!-- Importando Materialize -->
     <!-- Compiled and minified CSS -->
@@ -17,7 +19,7 @@
 
 
 <body>
-    
+    <?= $this->session->flashdata("crud_auth");?>
     <div class = "container">
         <div class = "row container-form">
             <div class = "col s3"></div>

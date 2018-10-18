@@ -14,8 +14,9 @@ class Campanha extends CI_Controller {
 	/* Controlador padrão de loguin do sistema */
 	public function index(){
 		
-		/* verifica se o usuário está logado */
-		//if(!$this->session->has_userdata("adm")) redirect("/");
+		/* verificando se o usuário está logado */
+		if(!$this->session->has_userdata("user"))
+			redirect("/login");
 
 		/* carregando as campanhas cadastradas */
 		$dados["campanhas"] = $this->campanha->getAllCampanhas();
@@ -33,8 +34,9 @@ class Campanha extends CI_Controller {
 	/* função para adicionar uma nova campanha no sistema ou att uma existente */
 	public function add(){
 		
-		/* verifica se o usuário está logado */
-		//if(!$this->session->has_userdata("adm")) redirect("/");
+		/* verificando se o usuário está logado */
+		if(!$this->session->has_userdata("user"))
+			redirect("/login");
 
 		/* verifica se a requisição é para adicionar ou atualizar uma campanha */
 		

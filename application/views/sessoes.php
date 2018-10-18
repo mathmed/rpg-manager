@@ -18,6 +18,12 @@
             <div class = "collapse" id = "collapse-add-sessao">
                 <div class = "row espaco-top">
                     <div class = "col-md-10">
+                        <label>Informe o nome da sua sessão</label>
+                        <input name = "nome_sessao" required class = "form-control">
+                    </div>
+                </div>
+                <div class = "row espaco-top">
+                    <div class = "col-md-10">
                         <label>Escreva sobre sua sessão</label>
                         <textarea required name  = "descricao_sessao" class = "form-control" rows = '10'></textarea>
                     </div>
@@ -29,7 +35,7 @@
                     </div>
                 </div>
                 <div class = "espaco-top">
-                    <button class = "btn button-green">Criar campanha</button>
+                    <button class = "btn button-green">Criar sessão</button>
                 </div>
             </div>
         </form>

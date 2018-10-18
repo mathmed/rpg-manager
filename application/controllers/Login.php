@@ -13,11 +13,14 @@ class Login extends CI_Controller {
 	/* função para chamar o model e tentar fazer login no sistema */
 	public function logar(){
 		
-		/* Adicionar lógica aqui */
+		/* carregando o model de login */
+		$this->load->model("model_login", "login");
 
-		/*************************/
-
-		/* redirecionando */
-		redirect("home");
+		/* chamando a função de autenticação */
+		$this->login->auth(
+			$this->input->post("apelido_usuario"),
+			$this->input->post("senha_usuario")
+		);
+		
 	}
 }

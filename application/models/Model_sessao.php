@@ -5,8 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Class Model_sessao extends CI_Model{
 
     /* função para criar uma nova sessão */
-    public function addSessao(){
+    public function addSessao($data = NULL, $descricao = NULL, $nome = NULL){
         
+        echo $data;
+        echo $descricao;
+        echo $nome;
     }
 
     /* função para deletar uma sessão */
