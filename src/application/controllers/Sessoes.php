@@ -13,25 +13,8 @@ class Sessoes extends CI_Controller {
 
 	/* função padrão da página sessão */
 	public function index(){
-
-		/* verificando se o usuário está logado */
-		if(!$this->session->has_userdata("user"))
-			redirect("/login");
-
-		/* verificando se foi passado o parâmetro */
-		if($this->session->has_userdata("id_campanha")){
-
-			/* carregando as sessões já cadastradas no banco de dados */
-			$data['sessoes'] = $this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"));
-
-			/* dados que serão passados como parâmetro */
-			/* enviando como parâmetro a cor da ul */
-			$data['cor_ul_sessao'] = 'ul-marcada';
-
-			/* carregando a view de sessões e base */
-			$this->load->view("base_campanha", $data);
-			$this->load->view('sessoes', $data);
-		}
+		/* redirecionando para a página 1 */
+		redirect("/sessoes/pag/1");
 	}
 
 	/* função para mostrar a página de uma sessão */
@@ -99,6 +82,49 @@ class Sessoes extends CI_Controller {
 
 		/* redirecinando */
 		redirect("/sessoes");
+
+	}
+
+	/* função para controlar a paginação */
+	public function pag($pagina = NULL){
+
+		/* verificando se o usuário está logado */
+		if(!$this->session->has_userdata("user"))
+		redirect("/login");
+
+		if(!$pagina) $pagina = 0;
+
+		/* definindo o número de registros em cada página */
+		$total_reg = 3;
+		$items_pagina = $pagina * $total_reg;
+		
+		/* não permitindo que volte à página anterior a 1 */
+		if($pagina <= $total_reg) $data['btnA'] = 'disabled';
+		else $data['btnA'] = "";
+
+
+		/* verificando se foi passado o parâmetro */
+		if($this->session->has_userdata("id_campanha")){
+
+			/* verificando quantidade de registros */
+			$tr = count($this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"), 1, 1000000));
+
+			/* carregando as sessões já cadastradas no banco de dados */
+			$data['sessoes'] = $this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"), $items_pagina, $total_reg);
+
+			$data['cor_ul_sessao'] = 'ul-marcada';
+			$data['pagina'] = $pagina;
+			$data['reg_por_pag'] = $total_reg;
+			$data['tr'] = $tr;
+
+			if($tr < $total_reg) $data['btnA'] = 'disabled';
+			else $data['btnA'] = '';
+			
+			/* carregando a view de sessões e base */
+			$this->load->view("base_campanha", $data);
+			$this->load->view('sessoes', $data);
+		}
+
 
 	}
     
