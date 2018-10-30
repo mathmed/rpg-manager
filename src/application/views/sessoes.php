@@ -80,7 +80,27 @@
                     </tbody>
                 </table>
 
+                <div class = "div-center">
+                    <ul class="pagination">
 
+                        <?php $a_ativo = ($pagina == 0) ? "disabled" : "" ?> 
+
+                        <li class = 'page-item <?= $a_ativo ?>'><a href="">Anterior</a></li>
+
+                        <?php for($i=1; $i <= ceil($qtd_reg/3); $i++){ ?>
+
+                            <?php $active = ($i-1 == $pagina) ? "active" : ""; ?>
+
+                            <li class = 'page-item <?= $active ?>'>
+                                <a href="../pag/<?= $i ?>"><?= $i ?></a>
+                            </li>
+                        
+                        <?php } ?>
+  
+                        <li class = 'page-item'><a href="">Próximo</a></li>
+
+                    </ul>
+                </div>
     
             </div>
             <div class = "col-md-1"></div>

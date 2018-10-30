@@ -90,9 +90,10 @@ class Sessoes extends CI_Controller {
 
 		/* verificando se o usuário está logado */
 		if(!$this->session->has_userdata("user"))
-		redirect("/login");
+			redirect("/login");
 
 		if(!$pagina) $pagina = 0;
+		else $pagina--;
 
 		/* definindo o número de registros em cada página */
 		$total_reg = 3;
@@ -107,15 +108,14 @@ class Sessoes extends CI_Controller {
 		if($this->session->has_userdata("id_campanha")){
 
 			/* verificando quantidade de registros */
-			$tr = count($this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"), 1, 1000000));
+			$tr = count($this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"), 1000, 0));
 
 			/* carregando as sessões já cadastradas no banco de dados */
-			$data['sessoes'] = $this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"), $items_pagina, $total_reg);
+			$data['sessoes'] = $this->sessao->getAllSessoes($this->session->has_userdata("id_campanha"), $total_reg, $items_pagina);
 
 			$data['cor_ul_sessao'] = 'ul-marcada';
 			$data['pagina'] = $pagina;
-			$data['reg_por_pag'] = $total_reg;
-			$data['tr'] = $tr;
+			$data['qtd_reg'] = $tr;
 
 			if($tr < $total_reg) $data['btnA'] = 'disabled';
 			else $data['btnA'] = '';

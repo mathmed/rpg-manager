@@ -71,20 +71,17 @@ Class Model_sessao extends CI_Model{
     }
 
     /* função para selecionar uma sessão específica do bd */
-    public function getSessao(){
-        
+    public function getSessao(){   
     }
 
     /* função para recuperar todas as sessões do bd */
-    public function getAllSessoes($id = NULL, $items_pag = NULL, $reg = NULL){
+    public function getAllSessoes($id = NULL, $reg = NULL, $items_pag = NULL){
 
-        if($id && $items_pag && $reg){
+        if($id){
 
-            echo $items_pag."<br>";
-            
             /* fazendo requisição */
             $this->db->order_by("id_sessao", "desc");
-            $this->db->limit($items_pag, $reg);
+            $this->db->limit($reg, $items_pag);
             $this->db->where("campanha_id_campanha", $id);
             $requisicao = $this->db->get("sessao");
 
