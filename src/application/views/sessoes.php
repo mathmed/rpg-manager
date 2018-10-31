@@ -5,7 +5,7 @@
     <div>
         <h1 class = "text-center primary-color title-font espaco-bottom">Sessões</h1>
     </div>
-    <form method = "POST" action = "sessoes/add">
+    <form method = "POST" action = "../../sessoes/add">
         <input type = "hidden" name = "tipo" value = "add">
         <div class = "collapse" id = "collapse-add-sessao">
             <div class = "row espaco-top">
@@ -81,11 +81,12 @@
                 </table>
 
                 <div class = "div-center">
+
                     <ul class="pagination">
+                        
+                        <?php $a_ativo = ($pagina == 0) ? "off disabled" : "" ?> 
 
-                        <?php $a_ativo = ($pagina == 0) ? "disabled" : "" ?> 
-
-                        <li class = 'page-item <?= $a_ativo ?>'><a href="">Anterior</a></li>
+                        <li class = 'page-item <?= $a_ativo ?>'><a href="../pag/<?= $pagina ?>">Anterior</a></li>
 
                         <?php for($i=1; $i <= ceil($qtd_reg/3); $i++){ ?>
 
@@ -96,8 +97,10 @@
                             </li>
                         
                         <?php } ?>
-  
-                        <li class = 'page-item'><a href="">Próximo</a></li>
+                        
+                        <?php $p_ativo = ($pagina+1 == ceil($qtd_reg/3)) ? "off disabled" : "" ?>
+
+                        <li class = 'page-item  <?= $p_ativo ?>'><a href="../pag/<?= $pagina+2 ?>">Próximo</a></li>
 
                     </ul>
                 </div>

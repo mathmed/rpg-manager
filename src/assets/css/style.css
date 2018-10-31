@@ -2,6 +2,11 @@
 
 /* Estilos genéricos */
 
+.off {
+	pointer-events: none;
+	color: grey;
+}
+
 a {
     cursor: pointer;
 }
